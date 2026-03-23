@@ -10,7 +10,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'Mpesa-Based Wi-Fi Hotspot Billing System',
-    description: `A comprehensive WiFi billing system with M-Pesa integration, loan management, and MikroTik hotspot control.\n\nFeatures:\n- 🔐 Secure Authentication (JWT)\n- 💳 M-Pesa Integration\n- 💰 Loan System\n- 🌐 MikroTik Integration\n- 📊 Admin Dashboard\n- 📱 Responsive UI (React/Next.js)\n- 🔄 Real-time Updates (WebSocket)\n\nQuick Deploy to Render, Docker, PM2, or manual Node.js.\n\nSee README for full setup, deployment, and environment variable details.\n\nFor support, create an issue in the GitHub repository. Paid consultations only.`,
+    description: `A comprehensive WiFi billing system with M-Pesa integration, loan management, and MikroTik hotspot control.`,
     technologies: [
       'React', 'Node.js', 'Next.js', 'JavaScript', 'MySQL', 'MikroTik', 'mpesa', 'prisma', 'TypeScript'
     ],
