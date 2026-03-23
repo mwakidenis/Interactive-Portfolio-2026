@@ -47,7 +47,7 @@ export default function Home() {
       </section>
 
       {/* What I Do Section */}
-      <section style={{ background: '#0a1733', padding: '4rem 0' }}>
+      <section style={{ background: 'white', padding: '4rem 0' }}>
         <div className="container">
           <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'white' }}>What I Do</h2>
           <div style={{
