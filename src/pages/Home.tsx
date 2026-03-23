@@ -26,9 +26,9 @@ export default function Home() {
               C++, Python, Node.js, and Java — and I enjoy working across both backend and 
               frontend stacks.
               <img
-  src="https://res.cloudinary.com/dqv8dlj2s/image/upload/w_300,q_auto,f_auto/v1772145844/20250810_163412_wrgkmr.jpg"
+  src="https://res.cloudinary.com/dqv8dlj2s/image/upload/w_300,h_500,c_fill,g_auto,q_auto,f_auto/v1772145844/20250810_163412_wrgkmr.jpg"
   alt="Project preview"
-  className="w-24 h-32 rounded-lg object-contain bg-gray-100"
+  className="w-32 h-48 object-cover rounded-lg"
 />
               My key areas of interest include developing Web Applications, exploring Hashing 
               and Dictionary patterns used at Google & Microsoft and constant research on new 
