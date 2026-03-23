@@ -57,9 +57,13 @@ export const projects: Project[] = [
     image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772482572/Screenshot_2026-03-02_230417_sd4zwd.png',
   },
   {
-    title: 'Chat Application',
-    description: 'Real-time chat application with rooms, direct messaging, and file sharing.',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    github: 'https://github.com/mwakidenis/chatapp',
+    title: 'Developer Portfolio Website',
+    description: `A modern, sleek, and fully responsive personal portfolio built with Vite, React, and TypeScript. Showcases projects, skills, blog, and more with beautiful UI/UX and dark/light mode.`,
+    technologies: [
+      'Vite', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'CSS'
+    ],
+    github: 'https://github.com/mwakidenis/portfolio_website',
+    demo: 'https://mwakidenis.pages.dev',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774308274/Screenshot_2026-03-24_022121_pmnzmy.png',
   },
 ];
