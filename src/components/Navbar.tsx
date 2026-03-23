@@ -265,5 +265,4 @@ const navLinks = [
     </nav>
   )
 }
-
 export default Navbar;
