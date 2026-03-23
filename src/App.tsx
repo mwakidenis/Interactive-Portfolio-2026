@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton phoneNumber="254798750585" />
       </div>
     </ThemeProvider>
   )
