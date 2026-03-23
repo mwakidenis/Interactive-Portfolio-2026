@@ -58,7 +58,6 @@ export default function Contact() {
             {/* Contact Info */}
             <div>
               <h2 style={{ marginBottom: '2rem' }}>Contact Information</h2>
-              
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <ContactInfo
                   Icon={Mail}
@@ -77,6 +76,20 @@ export default function Contact() {
                   title="Location"
                   content="Nairobi, Kenya"
                 />
+              </div>
+              <div style={{ marginTop: '3rem' }}>
+                <h3 style={{ marginBottom: '1rem' }}>Let's Connect</h3>
+                <p style={{ color: 'var(--text-light)', lineHeight: 1.7 }}>
+                  I'm always open to discussing new projects, creative ideas, 
+                  or opportunities to be part of your visions. Feel free to 
+                  reach out if you have a question or just want to say hi!
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <h2 style={{ marginBottom: '2rem' }}>Send a Message</h2>
               <form onSubmit={handleSubmit} style={{
                 display: 'flex',
                 flexDirection: 'column',
