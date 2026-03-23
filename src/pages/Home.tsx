@@ -65,7 +65,7 @@ export default function Home() {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-              <span style={{ fontSize: '2rem', marginBottom: '0.5rem', color: '#FFD600' }}>⚡</span>
+              <span style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: '#FFD600' }}>💻</span>
               <h3 style={{ marginBottom: '0.75rem', color: 'white', textAlign: 'center' }}>Web Development</h3>
               <p style={{ color: '#c7d0e0', textAlign: 'center' }}>Building responsive, performant web applications with modern frameworks like React and Next.js.</p>
             </div>
@@ -79,7 +79,7 @@ export default function Home() {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-              <span style={{ fontSize: '2rem', marginBottom: '0.5rem', color: '#00E676' }}>🟢</span>
+              <span style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: '#3DDAD7' }}>🚀</span>
               <h3 style={{ marginBottom: '0.75rem', color: 'white', textAlign: 'center' }}>Performance Optimization</h3>
               <p style={{ color: '#c7d0e0', textAlign: 'center' }}>Optimizing applications for speed and efficiency to deliver the best user experience.</p>
             </div>
@@ -93,7 +93,7 @@ export default function Home() {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-              <span style={{ fontSize: '2rem', marginBottom: '0.5rem', color: '#FF69B4' }}>💗</span>
+              <span style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: '#FF69B4' }}>🧪</span>
               <h3 style={{ marginBottom: '0.75rem', color: 'white', textAlign: 'center' }}>Quality Assurance</h3>
               <p style={{ color: '#c7d0e0', textAlign: 'center' }}>Writing tests and following best practices to ensure reliable, maintainable code.</p>
             </div>
