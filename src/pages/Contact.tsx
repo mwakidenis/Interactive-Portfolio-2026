@@ -77,24 +77,6 @@ export default function Contact() {
                   title="Location"
                   content="Nairobi, Kenya"
                 />
-              <input
-                type={type}
-                name={name}
-                value={value}
-                onChange={onChange}
-                required={required}
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  border: '1px solid var(--border)',
-                  borderRadius: '0.5rem',
-                  fontSize: '1rem',
-                  fontFamily: 'inherit',
-                  backgroundColor: 'var(--surface)',
-                  color: 'var(--text)',
-                  transition: 'background-color 0.2s, color 0.2s',
-                }}
-              />
               <form onSubmit={handleSubmit} style={{
                 display: 'flex',
                 flexDirection: 'column',
