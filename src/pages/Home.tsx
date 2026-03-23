@@ -57,8 +57,6 @@ export default function Home() {
                       </div>
                     </div>
                   </section>
-=======
->>>>>>> c3bd28c (Fix: remove merge conflict markers and clean up Home.tsx)
           </div>
         </div>
       </section>
