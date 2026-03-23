@@ -8,7 +8,7 @@ import { socialLinks } from '../data/socialLinks';
 import { useTheme } from '../hooks/useTheme'
 
 // Dictionary-style search function (must be outside JSX)
-function getSearchResults(keyword: string) {
+function getSearchResults(keyword: string): string[] {
   const results: string[] = [];
   const kw = keyword.toLowerCase();
   // Projects
@@ -264,3 +264,5 @@ const navLinks = [
     </nav>
   )
 }
+
+export default Navbar;
