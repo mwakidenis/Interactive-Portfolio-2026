@@ -28,7 +28,7 @@ export default function Home() {
               <img
   src="https://res.cloudinary.com/dqv8dlj2s/image/upload/w_300,h_500,c_fill,g_auto,q_auto,f_auto/v1772145844/20250810_163412_wrgkmr.jpg"
   alt="Project preview"
-  className="w-32 h-48 object-cover rounded-lg"
+  className="w-24 h-32 object-cover rounded-lg"
 />
               My key areas of interest include developing Web Applications, exploring Hashing 
               and Dictionary patterns used at Google & Microsoft and constant research on new 
