@@ -22,7 +22,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <WhatsAppButton phoneNumber="254798750585" />
+        <WhatsAppButton />
       </div>
     </ThemeProvider>
   )
