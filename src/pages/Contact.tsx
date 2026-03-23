@@ -63,8 +63,8 @@ export default function Contact() {
                 <ContactInfo
                   Icon={Mail}
                   title="Email"
-                  content="me@mwakidenis.com"
-                  href="mailto:me@mwakidenis.com"
+                  content="mwakidenice@gmail.com"
+                  href="mailto:mwakidenice@gmail.com"
                 />
                 <ContactInfo
                   Icon={Phone}
@@ -77,21 +77,24 @@ export default function Contact() {
                   title="Location"
                   content="Nairobi, Kenya"
                 />
-              </div>
-
-              <div style={{ marginTop: '3rem' }}>
-                <h3 style={{ marginBottom: '1rem' }}>Let's Connect</h3>
-                <p style={{ color: 'var(--text-light)', lineHeight: 1.7 }}>
-                  I'm always open to discussing new projects, creative ideas, 
-                  or opportunities to be part of your visions. Feel free to 
-                  reach out if you have a question or just want to say hi!
-                </p>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <h2 style={{ marginBottom: '2rem' }}>Send a Message</h2>
+              <input
+                type={type}
+                name={name}
+                value={value}
+                onChange={onChange}
+                required={required}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem',
+                  fontFamily: 'inherit',
+                  backgroundColor: 'var(--surface)',
+                  color: 'var(--text)',
+                  transition: 'background-color 0.2s, color 0.2s',
+                }}
+              />
               <form onSubmit={handleSubmit} style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -143,6 +146,9 @@ export default function Contact() {
                       fontSize: '1rem',
                       fontFamily: 'inherit',
                       resize: 'vertical',
+                      backgroundColor: 'var(--surface)',
+                      color: 'var(--text)',
+                      transition: 'background-color 0.2s, color 0.2s',
                     }}
                   />
                 </div>
