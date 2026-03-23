@@ -20,7 +20,7 @@ export const projects: Project[] = [
   },
   {
     title: 'KibandaPOS (Point Of Sale)',
-    description: `KibandaPOS is a premium utility for mess managers and small-scale food vendors. Track daily expenses, manage members, and settle debts instantly.\n\nFeatures:\n- Modern UI & Powerful Dashboard\n- Multi-Payer Entry System\n- Member Management\n- Premium Dark Mode\n- Excel Reporting\n- Dynamic Settlement\n- Secure Local Storage\n\nOne-click install for Windows. Developed under the KibandaPOA Initiative to empower local food services.`,
+    description: `KibandaPOS is a premium utility for mess managers and small-scale food vendors. Track daily expenses, manage members, and settle debts instantly.`,
     technologies: [
       'React.js', 'Vite', 'Ant Design', 'Ant Design Charts', 'SheetJS', 'Day.js', 'JavaScript', 'CSS'
     ],
