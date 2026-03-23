@@ -47,25 +47,43 @@ export default function Home() {
       </section>
 
       {/* What I Do Section */}
-      <section>
+      <section style={{ background: '#0a1733', padding: '4rem 0' }}>
         <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>What I Do</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'white' }}>What I Do</h2>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '2rem',
           }}>
-            <div>
-              <h3>Web Development</h3>
-              <p>Building responsive, performant web applications with modern frameworks like React and Next.js.</p>
+            <div style={{
+              background: 'rgba(255,255,255,0.04)',
+              borderRadius: '1rem',
+              padding: '2rem',
+              color: 'white',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)'
+            }}>
+              <h3 style={{ marginBottom: '0.75rem', color: 'white' }}>Web Development</h3>
+              <p style={{ color: '#c7d0e0' }}>Building responsive, performant web applications with modern frameworks like React and Next.js.</p>
             </div>
-            <div>
-              <h3>Performance Optimization</h3>
-              <p>Optimizing applications for speed and efficiency to deliver the best user experience.</p>
+            <div style={{
+              background: 'rgba(255,255,255,0.04)',
+              borderRadius: '1rem',
+              padding: '2rem',
+              color: 'white',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)'
+            }}>
+              <h3 style={{ marginBottom: '0.75rem', color: 'white' }}>Performance Optimization</h3>
+              <p style={{ color: '#c7d0e0' }}>Optimizing applications for speed and efficiency to deliver the best user experience.</p>
             </div>
-            <div>
-              <h3>Quality Assurance</h3>
-              <p>Writing tests and following best practices to ensure reliable, maintainable code.</p>
+            <div style={{
+              background: 'rgba(255,255,255,0.04)',
+              borderRadius: '1rem',
+              padding: '2rem',
+              color: 'white',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)'
+            }}>
+              <h3 style={{ marginBottom: '0.75rem', color: 'white' }}>Quality Assurance</h3>
+              <p style={{ color: '#c7d0e0' }}>Writing tests and following best practices to ensure reliable, maintainable code.</p>
             </div>
           </div>
         </div>
