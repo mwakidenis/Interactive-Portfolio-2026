@@ -54,12 +54,21 @@ aboutText.split(/\W+/).forEach(word => {
 function getSearchResults(keyword: string): string[] {
   const kw = keyword.toLowerCase();
   let results: string[] = [];
-  if (projectMap[kw]) results = results.concat(projectMap[kw]);
-  if (skillMap[kw]) results = results.concat(skillMap[kw]);
-  if (experienceMap[kw]) results = results.concat(experienceMap[kw]);
-  if (socialMap[kw]) results = results.concat(socialMap[kw]);
-  if (aboutMap[kw]) results = results.concat(aboutMap[kw]);
-  return results;
+  // Helper to collect all values from a map where the key includes the substring
+  function collectMatches(map: Record<string, string[]>) {
+    Object.keys(map).forEach(key => {
+      if (key.includes(kw)) {
+        results = results.concat(map[key]);
+      }
+    });
+  }
+  collectMatches(projectMap);
+  collectMatches(skillMap);
+  collectMatches(experienceMap);
+  collectMatches(socialMap);
+  collectMatches(aboutMap);
+  // Remove duplicates
+  return Array.from(new Set(results));
 }
 
 const navLinks = [
