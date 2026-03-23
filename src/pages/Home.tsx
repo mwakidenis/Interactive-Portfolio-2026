@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Code2, Zap, Shield, LucideIcon } from 'lucide-react'
+import { ArrowRight, LucideIcon } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -84,33 +84,3 @@ export default function Home() {
   )
 }
 
-function FeatureCard({ Icon, title, description }: {
-  Icon: LucideIcon
-  title: string
-  description: string
-}) {
-  return (
-    <div style={{
-      padding: '2rem',
-      borderRadius: '1rem',
-      border: '1px solid var(--border)',
-      backgroundColor: 'white',
-      transition: 'transform 0.2s, box-shadow 0.2s',
-    }}>
-      <div style={{
-        width: '3rem',
-        height: '3rem',
-        borderRadius: '0.75rem',
-        backgroundColor: 'var(--surface)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: '1rem',
-      }}>
-        <Icon size={24} color="var(--primary)" />
-      </div>
-      <h3 style={{ marginBottom: '0.5rem' }}>{title}</h3>
-      <p style={{ color: 'var(--text-light)' }}>{description}</p>
-    </div>
-  )
-}
