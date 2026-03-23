@@ -38,11 +38,13 @@ export const projects: Project[] = [
     image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774304866/Screenshot_31_tcbkm7.png',
   },
   {
-    title: 'Weather Dashboard',
-    description: 'A beautiful weather dashboard with forecasts and location-based data.',
-    technologies: ['React', 'OpenWeather API', 'Chart.js'],
-    github: 'https://github.com/mwakidenis/weather',
-    demo: 'https://weather.mwakidenis.com',
+    title: 'MikroTik Hotspot Billing System',
+    description: `A comprehensive WiFi billing system for Kenya with M-Pesa integration, MikroTik router control, and a modern web-based admin dashboard. Real-time analytics, plan management, and secure payments.`,
+    technologies: [
+      'TypeScript', 'JavaScript', 'React', 'Node.js', 'PostgreSQL', 'MikroTik', 'mpesa'
+    ],
+    github: 'https://github.com/mwakidenis/miktrotik-hotspot-billing',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774306274/images_u7uzns.jpg',
   },
   {
     title: 'Blog Platform',
