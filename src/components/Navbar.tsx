@@ -86,13 +86,15 @@ const navLinks = [
   const { theme, toggleTheme } = useTheme()
 
 
+
   function Navbar() {
-    const [_isOpen, _setIsOpen] = useState(false)
-    const [_showSearch, _setShowSearch] = useState(false)
-    const [_searchValue, _setSearchValue] = useState("")
-    const [_searchResults, _setSearchResults] = useState<string[]>([])
-    const _location = useLocation()
-    const { theme: _theme, toggleTheme: _toggleTheme } = useTheme()
+    // Only keep state and hooks that are actually used in the JSX below
+    const [isOpen, setIsOpen] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
+    const [searchResults, setSearchResults] = useState<string[]>([]);
+    const location = useLocation();
+    const { theme, toggleTheme } = useTheme();
 
     return (
       <nav style={{
