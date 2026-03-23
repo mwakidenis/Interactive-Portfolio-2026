@@ -36,21 +36,24 @@ export default function Contact() {
   }
 
   return (
-    <div>
-      <section>
-        <div className="container">
-          <h1 style={{ marginBottom: '1rem' }}>Get In Touch</h1>
-          <p style={{
-            color: 'var(--text-light)',
-            fontSize: '1.125rem',
-            marginBottom: '3rem',
-            maxWidth: '600px',
-          }}>
-            Have a question or want to work together? I'd love to hear from you. 
-            Fill out the form below or reach out through other channels.
-          </p>
-
-          <div style={{
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        required={required}
+        style={{
+          width: '100%',
+          padding: '0.75rem 1rem',
+          border: '1px solid var(--border)',
+          borderRadius: '0.5rem',
+          fontSize: '1rem',
+          fontFamily: 'inherit',
+          backgroundColor: 'var(--surface)',
+          color: 'var(--text)',
+          transition: 'background-color 0.2s, color 0.2s',
+        }}
+      />
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
             gap: '4rem',
