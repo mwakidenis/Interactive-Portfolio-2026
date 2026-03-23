@@ -1,6 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Code2, Sun, Moon } from 'lucide-react'
+import { Menu, X, Code2, Sun, Moon, Search } from 'lucide-react'
 import { useState } from 'react'
+import projectsData from '../pages/Projects'
+// Import About data
+import aboutData from '../pages/About'
+// Import Footer social links
+import footerData from './Footer'
 import { useTheme } from '../hooks/useTheme'
 
 const navLinks = [
@@ -10,8 +15,10 @@ const navLinks = [
   { path: '/contact', label: 'Contact' },
 ]
 
-export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showSearch, setShowSearch] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
+  const [searchResults, setSearchResults] = useState([])
   const location = useLocation()
   const { theme, toggleTheme } = useTheme()
 
@@ -29,17 +36,137 @@ export default function Navbar() {
         justifyContent: 'space-between',
         height: '4rem',
       }}>
-        <Link to="/" style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          fontSize: '1.25rem',
-          fontWeight: '700',
-          color: 'var(--text)',
-        }}>
-          <Code2 size={28} color="var(--primary)" />
-          <span>Mwaki Denis</span>
-        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Link to="/" style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            fontSize: '1.25rem',
+            fontWeight: '700',
+            color: 'var(--text)',
+            textTransform: 'lowercase',
+          }}>
+            <Code2 size={28} color="var(--primary)" />
+            <span>mwakidenis</span>
+          </Link>
+          <div style={{ position: 'relative', marginLeft: '0.5rem' }}>
+            <button
+              onClick={() => setShowSearch((v) => !v)}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '0.25rem',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--text)',
+                transition: 'background-color 0.2s',
+              }}
+              aria-label="Search"
+            >
+              <Search size={22} />
+            </button>
+            {showSearch && (
+              <div style={{ position: 'absolute', left: '110%', top: 0, zIndex: 1000 }}>
+                <input
+                  type="text"
+                  autoFocus
+                  value={searchValue}
+                  onChange={e => {
+                    const val = e.target.value;
+                    setSearchValue(val);
+                    setSearchResults(val ? getSearchResults(val) : []);
+                  }}
+                  placeholder="Search..."
+                  style={{
+                    width: '180px',
+                    padding: '0.4rem 0.8rem',
+                    fontSize: '1rem',
+                    borderRadius: '0.5rem',
+                    border: '1px solid var(--border)',
+                    background: 'var(--surface)',
+                    color: 'var(--text)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    outline: 'none',
+                  }}
+                  onBlur={() => setShowSearch(false)}
+                />
+                {searchResults.length > 0 && (
+                  <div style={{
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '0.5rem',
+                    marginTop: '0.25rem',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    maxHeight: '260px',
+                    overflowY: 'auto',
+                    width: '100%',
+                  }}>
+                    {searchResults.map((result, idx) => (
+                      <div key={idx} style={{ padding: '0.5rem 0.75rem', borderBottom: '1px solid var(--border)', cursor: 'pointer' }}>
+                        {result}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+            // Dictionary-style search function
+            function getSearchResults(keyword) {
+              const results = [];
+              const kw = keyword.toLowerCase();
+              // Projects
+              if (projectsData && Array.isArray(projectsData)) {
+                projectsData.forEach(p => {
+                  if (
+                    p.title.toLowerCase().includes(kw) ||
+                    p.description.toLowerCase().includes(kw) ||
+                    (p.technologies && p.technologies.some(t => t.toLowerCase().includes(kw)))
+                  ) {
+                    results.push(`Project: ${p.title}`);
+                  }
+                });
+              }
+              // About: skills
+              if (aboutData && Array.isArray(aboutData.skills)) {
+                aboutData.skills.forEach(skill => {
+                  if (skill.toLowerCase().includes(kw)) results.push(`Skill: ${skill}`);
+                });
+              }
+              // About: experience
+              if (aboutData && Array.isArray(aboutData.experience)) {
+                aboutData.experience.forEach(exp => {
+                  if (
+                    exp.company.toLowerCase().includes(kw) ||
+                    exp.role.toLowerCase().includes(kw) ||
+                    exp.description.toLowerCase().includes(kw)
+                  ) {
+                    results.push(`Experience: ${exp.role} at ${exp.company}`);
+                  }
+                });
+              }
+              // Footer: social links
+              if (footerData && Array.isArray(footerData.socialLinks)) {
+                footerData.socialLinks.forEach(link => {
+                  if (
+                    link.label.toLowerCase().includes(kw) ||
+                    link.href.toLowerCase().includes(kw)
+                  ) {
+                    results.push(`Social: ${link.label}`);
+                  }
+                });
+              }
+              // Home: about text (static)
+              const aboutText = `A passionate software engineer contributing to organizational growth through quality software. I specialize in building modern web applications with React, TypeScript, and cloud technologies. I’m proficient in JavaScript, C++, Python, Node.js, and Java — and I enjoy working across both backend and frontend stacks. My key areas of interest include developing Web Applications, exploring Hashing and Dictionary patterns and constant research on new ways to bridge on-chain and off-chain systems in block-chain technology. Whenever possible, I love building projects with Node.js and modern frameworks like React.js and Next.js`;
+              if (aboutText.toLowerCase().includes(kw)) {
+                results.push('About: ' + keyword);
+              }
+              return results;
+            }
+          </div>
+        </div>
 
         {/* Desktop Navigation */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
