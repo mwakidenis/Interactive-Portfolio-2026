@@ -50,6 +50,7 @@ function getSearchResults(keyword: string): string[] {
     results.push('About: ' + keyword);
   }
   return results;
+}
 
 const navLinks = [
   { path: '/', label: 'Home' },
