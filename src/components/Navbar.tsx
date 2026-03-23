@@ -111,50 +111,50 @@ const navLinks = [
                 )}
               </div>
             )}
-            // Dictionary-style search function
-            function getSearchResults(keyword: string) {
-              const results: string[] = [];
-              const kw = keyword.toLowerCase();
-              // Projects
-              projects.forEach(p => {
-                if (
-                  p.title.toLowerCase().includes(kw) ||
-                  p.description.toLowerCase().includes(kw) ||
-                  (p.technologies && p.technologies.some(t => t.toLowerCase().includes(kw)))
-                ) {
-                  results.push(`Project: ${p.title}`);
-                }
-              });
-              // Skills
-              skills.forEach(skill => {
-                if (skill.toLowerCase().includes(kw)) results.push(`Skill: ${skill}`);
-              });
-              // Experience
-              experience.forEach(exp => {
-                if (
-                  exp.company.toLowerCase().includes(kw) ||
-                  exp.role.toLowerCase().includes(kw) ||
-                  exp.description.toLowerCase().includes(kw)
-                ) {
-                  results.push(`Experience: ${exp.role} at ${exp.company}`);
-                }
-              });
-              // Social links
-              socialLinks.forEach(link => {
-                if (
-                  link.label.toLowerCase().includes(kw) ||
-                  link.href.toLowerCase().includes(kw)
-                ) {
-                  results.push(`Social: ${link.label}`);
-                }
-              });
-              // Home: about text (static)
-              const aboutText = `A passionate software engineer contributing to organizational growth through quality software. I specialize in building modern web applications with React, TypeScript, and cloud technologies. I’m proficient in JavaScript, C++, Python, Node.js, and Java — and I enjoy working across both backend and frontend stacks. My key areas of interest include developing Web Applications, exploring Hashing and Dictionary patterns and constant research on new ways to bridge on-chain and off-chain systems in block-chain technology. Whenever possible, I love building projects with Node.js and modern frameworks like React.js and Next.js`;
-              if (aboutText.toLowerCase().includes(kw)) {
-                results.push('About: ' + keyword);
+          // Dictionary-style search function (must be outside JSX)
+          function getSearchResults(keyword: string) {
+            const results: string[] = [];
+            const kw = keyword.toLowerCase();
+            // Projects
+            projects.forEach(p => {
+              if (
+                p.title.toLowerCase().includes(kw) ||
+                p.description.toLowerCase().includes(kw) ||
+                (p.technologies && p.technologies.some(t => t.toLowerCase().includes(kw)))
+              ) {
+                results.push(`Project: ${p.title}`);
               }
-              return results;
+            });
+            // Skills
+            skills.forEach(skill => {
+              if (skill.toLowerCase().includes(kw)) results.push(`Skill: ${skill}`);
+            });
+            // Experience
+            experience.forEach(exp => {
+              if (
+                exp.company.toLowerCase().includes(kw) ||
+                exp.role.toLowerCase().includes(kw) ||
+                exp.description.toLowerCase().includes(kw)
+              ) {
+                results.push(`Experience: ${exp.role} at ${exp.company}`);
+              }
+            });
+            // Social links
+            socialLinks.forEach(link => {
+              if (
+                link.label.toLowerCase().includes(kw) ||
+                link.href.toLowerCase().includes(kw)
+              ) {
+                results.push(`Social: ${link.label}`);
+              }
+            });
+            // Home: about text (static)
+            const aboutText = `A passionate software engineer contributing to organizational growth through quality software. I specialize in building modern web applications with React, TypeScript, and cloud technologies. I’m proficient in JavaScript, C++, Python, Node.js, and Java — and I enjoy working across both backend and frontend stacks. My key areas of interest include developing Web Applications, exploring Hashing and Dictionary patterns and constant research on new ways to bridge on-chain and off-chain systems in block-chain technology. Whenever possible, I love building projects with Node.js and modern frameworks like React.js and Next.js`;
+            if (aboutText.toLowerCase().includes(kw)) {
+              results.push('About: ' + keyword);
             }
+            return results;
+          }
           </div>
         </div>
 
