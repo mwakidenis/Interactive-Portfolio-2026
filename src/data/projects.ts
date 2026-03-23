@@ -19,10 +19,14 @@ export const projects: Project[] = [
     image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774303182/Screenshot_2026-01-09_213840_1_w2846r.png',
   },
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with cart, checkout, and payment integration.',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe'],
-    github: 'https://github.com/mwakidenis/ecommerce',
+    title: 'KibandaPOS (Point Of Sale)',
+    description: `KibandaPOS is a premium utility for mess managers and small-scale food vendors. Track daily expenses, manage members, and settle debts instantly.\n\nFeatures:\n- Modern UI & Powerful Dashboard\n- Multi-Payer Entry System\n- Member Management\n- Premium Dark Mode\n- Excel Reporting\n- Dynamic Settlement\n- Secure Local Storage\n\nOne-click install for Windows. Developed under the KibandaPOA Initiative to empower local food services.`,
+    technologies: [
+      'React.js', 'Vite', 'Ant Design', 'Ant Design Charts', 'SheetJS', 'Day.js', 'JavaScript', 'CSS'
+    ],
+    github: 'https://github.com/mwakidenis/Kibanda-POS',
+    demo: 'https://kibandapoa.vercel.app',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774304443/Screenshot_2026-03-24_012021_valxzu.png',
   },
   {
     title: 'Task Management App',
