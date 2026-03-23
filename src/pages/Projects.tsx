@@ -38,7 +38,7 @@ function ProjectCard({ project }: { project: Project }) {
       border: '1px solid var(--border)',
       borderRadius: '1rem',
       overflow: 'hidden',
-      backgroundColor: 'white',
+      backgroundColor: 'var(--surface)',
       transition: 'transform 0.2s, box-shadow 0.2s',
     }}>
       {project.image && (
