@@ -47,10 +47,14 @@ export const projects: Project[] = [
     image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774306274/images_u7uzns.jpg',
   },
   {
-    title: 'Blog Platform',
-    description: 'A content management system for publishing articles and blog posts.',
-    technologies: ['Next.js', 'MDX', 'Prisma', 'PostgreSQL'],
-    github: 'https://github.com/mwakidenis/blog',
+    title: 'Gmart Supermarket (E-Commerce)',
+    description: `Gmart is a full-featured online shopping platform with product listings, cart, order management, authentication, and admin dashboard. Built for a seamless, real-world e-commerce experience.`,
+    technologies: [
+      'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'CSS'
+    ],
+    github: 'https://github.com/mwakidenis/gmart-supermarket',
+    demo: 'https://gmart-mu.vercel.app',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772482572/Screenshot_2026-03-02_230417_sd4zwd.png',
   },
   {
     title: 'Chat Application',
