@@ -11,23 +11,6 @@ export default function Home() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Profile Image Top Right */}
-        <img
-          src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772750502/1760560045314_uunnsg.jpg"
-          alt="Mwaki Denis"
-          style={{
-            position: 'absolute',
-            top: '2.5rem',
-            right: '3rem',
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.08)',
-            border: '4px solid white',
-            zIndex: 2,
-          }}
-        />
         <div className="container">
           <div style={{ maxWidth: '800px' }}>
             <h1 style={{ marginBottom: '1.5rem' }}>
