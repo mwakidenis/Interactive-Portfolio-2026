@@ -3,10 +3,9 @@ import { ArrowRight, Code2, Zap, Shield, LucideIcon } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div>
+  <div style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        background: 'linear-gradient(135deg, var(--surface) 0%, white 100%)',
         padding: '6rem 0',
       }}>
         <div className="container">
@@ -72,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section style={{ backgroundColor: 'var(--surface)' }}>
+      <section>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ marginBottom: '1rem' }}>Let's Work Together</h2>
           <p style={{
