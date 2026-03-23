@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ background: 'white', minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
         background: 'linear-gradient(135deg, var(--surface) 0%, white 100%)',
