@@ -46,6 +46,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What I Do Section */}
+      <section>
+        <div className="container">
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>What I Do</h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2rem',
+          }}>
+            <div>
+              <h3>Web Development</h3>
+              <p>Building responsive, performant web applications with modern frameworks like React and Next.js.</p>
+            </div>
+            <div>
+              <h3>Performance Optimization</h3>
+              <p>Optimizing applications for speed and efficiency to deliver the best user experience.</p>
+            </div>
+            <div>
+              <h3>Quality Assurance</h3>
+              <p>Writing tests and following best practices to ensure reliable, maintainable code.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section style={{ backgroundColor: 'var(--surface)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
