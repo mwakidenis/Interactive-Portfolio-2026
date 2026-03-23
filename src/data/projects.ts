@@ -29,10 +29,13 @@ export const projects: Project[] = [
     image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774304443/Screenshot_2026-03-24_012021_valxzu.png',
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates.',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    github: 'https://github.com/mwakidenis/taskmanager',
+    title: 'TendaN301-Billing-System',
+    description: `A lightweight system that turns a Tenda router into a mini-ISP controller by reverse-engineering its internal API. Centralized control, device billing, and real-time access management for micro-ISP setups.`,
+    technologies: [
+      'PHP', 'JavaScript', 'HTML', 'SQLite', 'Hack'
+    ],
+    github: 'https://github.com/mwakidenis/TendaN301-Billing-System',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774304866/Screenshot_31_tcbkm7.png',
   },
   {
     title: 'Weather Dashboard',
