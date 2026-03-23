@@ -7,68 +7,39 @@ import { skills, experience } from '../data/about';
 import { socialLinks } from '../data/socialLinks';
 import { useTheme } from '../hooks/useTheme'
 
-// Preprocess data into hashmaps for O(1) search
-const projectMap: Record<string, string[]> = {};
+
+// Build a global autosuggest dictionary from all keywords/phrases
+const autosuggestSet = new Set<string>();
+// Projects
 projects.forEach(p => {
-  // Index by title, description, and each technology
-  [p.title, p.description, ...(p.technologies || [])].forEach(key => {
-    const kw = key.toLowerCase();
-    if (!projectMap[kw]) projectMap[kw] = [];
-    projectMap[kw].push(`Project: ${p.title}`);
-  });
+  p.title.split(/\W+/).forEach(w => autosuggestSet.add(w));
+  p.description.split(/\W+/).forEach(w => autosuggestSet.add(w));
+  (p.technologies || []).forEach(t => t.split(/\W+/).forEach(w => autosuggestSet.add(w)));
 });
-
-const skillMap: Record<string, string[]> = {};
-skills.forEach(skill => {
-  const kw = skill.toLowerCase();
-  if (!skillMap[kw]) skillMap[kw] = [];
-  skillMap[kw].push(`Skill: ${skill}`);
-});
-
-const experienceMap: Record<string, string[]> = {};
+// Skills
+skills.forEach(skill => skill.split(/\W+/).forEach(w => autosuggestSet.add(w)));
+// Experience
 experience.forEach(exp => {
-  [exp.company, exp.role, exp.description].forEach(key => {
-    const kw = key.toLowerCase();
-    if (!experienceMap[kw]) experienceMap[kw] = [];
-    experienceMap[kw].push(`Experience: ${exp.role} at ${exp.company}`);
-  });
+  exp.company.split(/\W+/).forEach(w => autosuggestSet.add(w));
+  exp.role.split(/\W+/).forEach(w => autosuggestSet.add(w));
+  exp.description.split(/\W+/).forEach(w => autosuggestSet.add(w));
 });
-
-const socialMap: Record<string, string[]> = {};
+// Social links
 socialLinks.forEach(link => {
-  [link.label, link.href].forEach(key => {
-    const kw = key.toLowerCase();
-    if (!socialMap[kw]) socialMap[kw] = [];
-    socialMap[kw].push(`Social: ${link.label}`);
-  });
+  link.label.split(/\W+/).forEach(w => autosuggestSet.add(w));
+  link.href.split(/\W+/).forEach(w => autosuggestSet.add(w));
 });
-
+// About text
 const aboutText = `A passionate software engineer contributing to organizational growth through quality software. I specialize in building modern web applications with React, TypeScript, and cloud technologies. I’m proficient in JavaScript, C++, Python, Node.js, and Java — and I enjoy working across both backend and frontend stacks. My key areas of interest include developing Web Applications, exploring Hashing and Dictionary patterns and constant research on new ways to bridge on-chain and off-chain systems in block-chain technology. Whenever possible, I love building projects with Node.js and modern frameworks like React.js and Next.js`;
-const aboutMap: Record<string, string[]> = {};
-aboutText.split(/\W+/).forEach(word => {
-  const kw = word.toLowerCase();
-  if (!aboutMap[kw]) aboutMap[kw] = [];
-  aboutMap[kw].push('About: ' + word);
-});
+aboutText.split(/\W+/).forEach(w => autosuggestSet.add(w));
 
-function getSearchResults(keyword: string): string[] {
+function getAutosuggestResults(keyword: string): string[] {
   const kw = keyword.toLowerCase();
-  let results: string[] = [];
-  // Helper to collect all values from a map where the key includes the substring
-  function collectMatches(map: Record<string, string[]>) {
-    Object.keys(map).forEach(key => {
-      if (key.includes(kw)) {
-        results = results.concat(map[key]);
-      }
-    });
-  }
-  collectMatches(projectMap);
-  collectMatches(skillMap);
-  collectMatches(experienceMap);
-  collectMatches(socialMap);
-  collectMatches(aboutMap);
-  // Remove duplicates
-  return Array.from(new Set(results));
+  if (!kw) return [];
+  // Suggest any word/phrase that starts with the input
+  return Array.from(autosuggestSet)
+    .filter(w => w && w.toLowerCase().startsWith(kw))
+    .sort((a, b) => a.localeCompare(b));
 }
 
 const navLinks = [
@@ -145,7 +116,7 @@ const navLinks = [
                     onChange={e => {
                       const val = e.target.value;
                       setSearchValue(val);
-                      setSearchResults(val ? getSearchResults(val) : []);
+                      setSearchResults(val ? getAutosuggestResults(val) : []);
                     }}
                     placeholder="Search..."
                     style={{
