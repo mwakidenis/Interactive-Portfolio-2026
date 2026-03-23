@@ -44,8 +44,8 @@ export default function Home() {
               src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772750502/1760560045314_uunnsg.jpg"
               alt="Mwaki Denis profile"
               style={{
-                width: '180px',
-                height: '180px',
+                width: '260px',
+                height: '260px',
                 objectFit: 'cover',
                 borderRadius: '1.5rem',
                 boxShadow: '0 2px 16px rgba(0,0,0,0.08)',
