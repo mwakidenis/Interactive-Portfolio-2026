@@ -106,7 +106,6 @@ export default function Home() {
                           with React, TypeScript, and cloud technologies. I’m proficient in JavaScript,
                           C++, Python, Node.js, and Java — and I enjoy working across both backend and 
                           frontend stacks.
->>>>>>> e03a610 (Feat: display profile image on top right of Hero section in Home page)
 
                           My key areas of interest include developing Web Applications, exploring Hashing 
                           and Dictionary patterns used at Google & Microsoft and constant research on new 
