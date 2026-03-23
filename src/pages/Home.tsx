@@ -20,9 +20,16 @@ export default function Home() {
               marginBottom: '2rem',
               lineHeight: 1.8,
             }}>
-              A passionate software engineer helping people make the world a better place 
+              A passionate software engineer contributing to organizational growth
               through quality software. I specialize in building modern web applications 
-              with React, TypeScript, and cloud technologies.
+              with React, TypeScript, and cloud technologies. I’m proficient in JavaScript,
+              C++, Python, Node.js, and Java — and I enjoy working across both backend and 
+              frontend stacks.
+              My key areas of interest include developing Web Applications, exploring Hashing 
+              and Dictionary patterns used at Google & Microsoft and constant research on new 
+              ways to bridge on-chain and off-chain systems.
+              Whenever possible, I love building projects with Node.js and modern frameworks
+              like React.js and Next.js
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link to="/projects" className="btn btn-primary">
