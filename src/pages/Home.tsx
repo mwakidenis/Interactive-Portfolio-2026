@@ -25,6 +25,11 @@ export default function Home() {
               with React, TypeScript, and cloud technologies. I’m proficient in JavaScript,
               C++, Python, Node.js, and Java — and I enjoy working across both backend and 
               frontend stacks.
+              <img
+  src="https://res.cloudinary.com/dqv8dlj2s/image/upload/w_300,h_300,c_fill,q_auto,f_auto/v1772145844/20250810_163412_wrgkmr.jpg"
+  alt="Project preview"
+  className="w-24 h-24 rounded-lg object-cover"
+/>
               My key areas of interest include developing Web Applications, exploring Hashing 
               and Dictionary patterns used at Google & Microsoft and constant research on new 
               ways to bridge on-chain and off-chain systems.
