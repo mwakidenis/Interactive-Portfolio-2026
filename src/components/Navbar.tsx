@@ -87,12 +87,12 @@ const navLinks = [
 
 
   function Navbar() {
-    const [isOpen, setIsOpen] = useState(false)
-    const [showSearch, setShowSearch] = useState(false)
-    const [searchValue, setSearchValue] = useState("")
-    const [searchResults, setSearchResults] = useState<string[]>([])
-    const location = useLocation()
-    const { theme, toggleTheme } = useTheme()
+    const [_isOpen, _setIsOpen] = useState(false)
+    const [_showSearch, _setShowSearch] = useState(false)
+    const [_searchValue, _setSearchValue] = useState("")
+    const [_searchResults, _setSearchResults] = useState<string[]>([])
+    const _location = useLocation()
+    const { theme: _theme, toggleTheme: _toggleTheme } = useTheme()
 
     return (
       <nav style={{
