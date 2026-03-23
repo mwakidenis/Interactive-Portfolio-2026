@@ -78,12 +78,6 @@ const navLinks = [
   { path: '/contact', label: 'Contact' },
 ]
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [showSearch, setShowSearch] = useState(false)
-  const [searchValue, setSearchValue] = useState("")
-  const [searchResults, setSearchResults] = useState<string[]>([])
-  const location = useLocation()
-  const { theme, toggleTheme } = useTheme()
 
 
 
