@@ -26,8 +26,8 @@ export default function Home() {
                 C++, Python, Node.js, and Java — and I enjoy working across both backend and 
                 frontend stacks.
                 My key areas of interest include developing Web Applications, exploring Hashing 
-                and Dictionary patterns used at Google & Microsoft and constant research on new 
-                ways to bridge on-chain and off-chain systems.
+                and Dictionary patterns and constant research on new ways to bridge on-chain 
+                and off-chain systems in block-chain technology.
                 Whenever possible, I love building projects with Node.js and modern frameworks
                 like React.js and Next.js
               </p>
