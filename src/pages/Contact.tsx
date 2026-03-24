@@ -130,37 +130,6 @@ export default function Contact() {
   );
 }
 
-function ContactInfo({ Icon, title, content, href }: {
-  Icon: LucideIcon;
-  title: string;
-  content: string;
-  href?: string;
-}) {
-  return (
-    <div style={{ display: 'flex', gap: '1rem' }}>
-      <div style={{
-        width: '3rem',
-        height: '3rem',
-        borderRadius: '0.75rem',
-        backgroundColor: 'var(--surface)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexShrink: 0,
-      }}>
-        <Icon size={20} color="var(--primary)" />
-      </div>
-      <div>
-        <p style={{ fontWeight: 500, marginBottom: '0.25rem' }}>{title}</p>
-        {href ? (
-          <a href={href} style={{ color: 'var(--text-light)' }}>{content}</a>
-        ) : (
-          <p style={{ color: 'var(--text-light)' }}>{content}</p>
-        )}
-      </div>
-    </div>
-  );
-}
 
 function InputField({ label, name, type = 'text', value, onChange, required }: {
   label: string;
