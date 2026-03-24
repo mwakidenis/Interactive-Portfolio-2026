@@ -5,7 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { Send, Mail, Phone, MapPin, LucideIcon } from 'lucide-react';
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrbpogeb";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqpraep";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
