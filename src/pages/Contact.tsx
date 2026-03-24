@@ -23,7 +23,7 @@ export default function Contact() {
     setStatus('sending');
     try {
       // Use test Formspree endpoint
-      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mrbpogeb';
+      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xaqpraep';
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
