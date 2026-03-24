@@ -30,29 +30,7 @@ export default function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  return (
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        style={{
-          width: '100%',
-          padding: '0.75rem 1rem',
-          border: '1px solid var(--border)',
-          borderRadius: '0.5rem',
-          fontSize: '1rem',
-          fontFamily: 'inherit',
-          backgroundColor: 'var(--surface)',
-          color: 'var(--text)',
-          transition: 'background-color 0.2s, color 0.2s',
-        }}
+      return (
       />
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
