@@ -30,34 +30,10 @@ export default function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
-      return (
-      />
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-            gap: '4rem',
-          }}>
-            {/* Contact Info */}
-            <div>
-              <h2 style={{ marginBottom: '2rem' }}>Contact Information</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <ContactInfo
-                  Icon={Mail}
-                  title="Email"
-                  content="mwakidenice@gmail.com"
-                  href="mailto:mwakidenice@gmail.com"
-                />
-                <ContactInfo
-                  Icon={Phone}
-                  title="Phone"
-                  content="+254 798 750 585"
-                  href="tel:+254798750585"
-                />
-                <ContactInfo
-                  Icon={MapPin}
-                  title="Location"
-                  content="Nairobi, Kenya"
-                />
-              </div>
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
               <div style={{ marginTop: '3rem' }}>
                 <h3 style={{ marginBottom: '1rem' }}>Let's Connect</h3>
                 <p style={{ color: 'var(--text-light)', lineHeight: 1.7 }}>
