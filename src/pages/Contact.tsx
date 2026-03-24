@@ -168,7 +168,6 @@ export default function Contact() {
     </section>
   );
 }
-}
 
 function ContactInfo({ Icon, title, content, href }: {
   Icon: LucideIcon;
