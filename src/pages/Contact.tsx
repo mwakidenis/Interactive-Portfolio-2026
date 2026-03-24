@@ -59,7 +59,9 @@ export default function Contact() {
           <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
             <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
-            <InputField label="Subject" name="subject" value={formData.subject} onChange={handleChange} required style={{ gridColumn: '1 / 3' }} />
+            <div style={{ gridColumn: '1 / 3' }}>
+              <InputField label="Subject" name="subject" value={formData.subject} onChange={handleChange} required />
+            </div>
             <div style={{ gridColumn: '1 / 3' }}>
               <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Message</label>
               <textarea
