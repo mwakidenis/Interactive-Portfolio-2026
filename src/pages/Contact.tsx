@@ -34,14 +34,22 @@ export default function Contact() {
   };
 
   return (
-    <section style={{ maxWidth: 800, margin: '0 auto', padding: '2rem 1rem' }}>
-      <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>Get In Touch</h1>
-      <p style={{ textAlign: 'center', color: 'var(--text-light)', marginBottom: '2.5rem', fontSize: '1.1rem' }}>
+    <section style={{ maxWidth: 1100, margin: '0 auto', padding: '2.5rem 1rem' }}>
+      <h1 style={{ fontSize: '2.25rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>Get In Touch</h1>
+      <p style={{ textAlign: 'center', color: 'var(--text-light)', marginBottom: '2.5rem', fontSize: '1.15rem' }}>
         Have a question or want to work together? I'd love to hear from you. Fill out the form below or reach out through other channels.
       </p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '3rem',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+        }}
+      >
         {/* Contact Information */}
-        <div style={{ flex: 1, minWidth: 260 }}>
+        <div style={{ flex: '1 1 320px', minWidth: 280, maxWidth: 370 }}>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1.5rem' }}>Contact Information</h2>
           <ContactInfo Icon={Mail} title="Email" content="mwakidenice@gmail.com" href="mailto:mwakidenice@gmail.com" />
           <ContactInfo Icon={Phone} title="Phone" content="+254 798 750 585" href="tel:+254798750585" />
@@ -54,9 +62,18 @@ export default function Contact() {
           </div>
         </div>
         {/* Contact Form */}
-        <div style={{ flex: 2, minWidth: 300 }}>
+        <div style={{ flex: '2 1 500px', minWidth: 340 }}>
           <h2 style={{ marginBottom: '2rem' }}>Send a Message</h2>
-          <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '1.5rem',
+              width: '100%',
+              minWidth: 0,
+            }}
+          >
             <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
             <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
             <div style={{ gridColumn: '1 / 3' }}>
