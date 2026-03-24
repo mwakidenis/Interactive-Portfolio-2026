@@ -50,21 +50,24 @@ export default function Contact() {
             <ContactInfo Icon={Mail} title="Email" content="denismwaki@gmail.com" href="mailto:denismwaki@gmail.com" />
             <ContactInfo Icon={Phone} title="Phone" content="+254 712 345678" href="tel:+254712345678" />
             <ContactInfo Icon={MapPin} title="Location" content="Nairobi, Kenya" />
-          </div>
-        </div>
-        {/* Contact Form */}
-        <div style={{ flex: 2, minWidth: 300 }}>
-          <h2 style={{ marginBottom: '2rem' }}>Send a Message</h2>
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
-              <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <InputField label="Subject" name="subject" value={formData.subject} onChange={handleChange} required />
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Message</label>
-              <textarea
-                name="message"
+          <input
+            type={type}
+            name={name}
+            value={value}
+            onChange={onChange}
+            required={required}
+            style={{
+              width: '100%',
+              padding: '0.75rem 1rem',
+              border: '1px solid var(--border)',
+              borderRadius: '0.5rem',
+              fontSize: '1rem',
+              fontFamily: 'inherit',
+              backgroundColor: typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'var(--surface)' : '#fff',
+              color: 'var(--text)',
+              transition: 'background-color 0.2s, color 0.2s',
+            }}
+          />
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -77,7 +80,7 @@ export default function Contact() {
                   fontSize: '1rem',
                   fontFamily: 'inherit',
                   resize: 'vertical',
-                  backgroundColor: 'var(--surface)',
+                  backgroundColor: typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'var(--surface)' : '#fff',
                   color: 'var(--text)',
                   transition: 'background-color 0.2s, color 0.2s',
                 }}
