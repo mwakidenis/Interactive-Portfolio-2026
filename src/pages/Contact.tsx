@@ -35,18 +35,22 @@ export default function Contact() {
 
   return (
     <section style={{ maxWidth: 800, margin: '0 auto', padding: '2rem 1rem' }}>
-      <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', textAlign: 'center' }}>Contact</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
-        {/* Contact Info */}
+      <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>Get In Touch</h1>
+      <p style={{ textAlign: 'center', color: 'var(--text-light)', marginBottom: '2.5rem', fontSize: '1.1rem' }}>
+        Have a question or want to work together? I'd love to hear from you. Fill out the form below or reach out through other channels.
+      </p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }}>
+        {/* Contact Information */}
         <div style={{ flex: 1, minWidth: 260 }}>
-          <h3 style={{ marginBottom: '1rem' }}>Let's Connect</h3>
-          <p style={{ color: 'var(--text-light)', lineHeight: 1.7, marginBottom: '2rem' }}>
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out if you have a question or just want to say hi!
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <ContactInfo Icon={Mail} title="Email" content="denismwaki@gmail.com" href="mailto:denismwaki@gmail.com" />
-            <ContactInfo Icon={Phone} title="Phone" content="+254 712 345678" href="tel:+254712345678" />
-            <ContactInfo Icon={MapPin} title="Location" content="Nairobi, Kenya" />
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1.5rem' }}>Contact Information</h2>
+          <ContactInfo Icon={Mail} title="Email" content="mwakidenice@gmail.com" href="mailto:mwakidenice@gmail.com" />
+          <ContactInfo Icon={Phone} title="Phone" content="+254 798 750 585" href="tel:+254798750585" />
+          <ContactInfo Icon={MapPin} title="Location" content="Nairobi, Kenya" />
+          <div style={{ marginTop: '2.5rem' }}>
+            <h3 style={{ marginBottom: '1rem' }}>Let's Connect</h3>
+            <p style={{ color: 'var(--text-light)', lineHeight: 1.7 }}>
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out if you have a question or just want to say hi!
+            </p>
           </div>
         </div>
         {/* Contact Form */}
@@ -74,7 +78,7 @@ export default function Contact() {
                   fontSize: '1rem',
                   fontFamily: 'inherit',
                   resize: 'vertical',
-                  backgroundColor: typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'var(--surface)' : '#fff',
+                  background: 'var(--surface, #fff)',
                   color: 'var(--text)',
                   transition: 'background-color 0.2s, color 0.2s',
                 }}
@@ -168,7 +172,7 @@ function InputField({ label, name, type = 'text', value, onChange, required }: {
           borderRadius: '0.5rem',
           fontSize: '1rem',
           fontFamily: 'inherit',
-          backgroundColor: typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'var(--surface)' : '#fff',
+          background: 'var(--surface, #fff)',
           color: 'var(--text)',
           transition: 'background-color 0.2s, color 0.2s',
         }}
