@@ -1,38 +1,136 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, LucideIcon } from 'lucide-react';
+import { FormEvent, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from 'sonner';
+import { Send, Mail, Phone, MapPin, LucideIcon } from 'lucide-react';
 
-interface FormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrbpogeb";
 
-export default function Contact() {
-  const [formData, setFormData] = useState<FormData>({
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: '',
+    message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-    setTimeout(() => {
-      setStatus('sent');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1000);
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+      if (response.ok) {
+        toast.success('Message sent successfully!', {
+          description: 'Thanks for reaching out. I\'ll get back to you shortly.'
+        });
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        toast.error('Failed to send message', {
+          description: 'Please try again or contact me directly via email.'
+        });
+      }
+    } catch (error) {
+      toast.error('Something went wrong', {
+        description: 'Please try again or contact me directly via email.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="glass p-4 sm:p-6 rounded-xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div className="space-y-2">
+          <label htmlFor="name" className="text-sm font-medium">
+            Name
+          </label>
+          <Input
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            placeholder="Your name"
+          />
+        </div>
+        <div className="space-y-2">
+          <label htmlFor="email" className="text-sm font-medium">
+            Email
+          </label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="Your email"
+          />
+        </div>
+      </div>
+      <div className="space-y-2 mb-4">
+        <label htmlFor="subject" className="text-sm font-medium">
+          Subject
+        </label>
+        <Input
+          id="subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          placeholder="Subject"
+        />
+      </div>
+      <div className="space-y-2 mb-6">
+        <label htmlFor="message" className="text-sm font-medium">
+          Message
+        </label>
+        <Textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          placeholder="Your message"
+          rows={4}
+          className="resize-none"
+        />
+      </div>
+      <Button type="submit" className="w-full" disabled={isSubmitting}>
+        {isSubmitting ? (
+          "Sending message..."
+        ) : (
+          <>
+            Send Message
+            <Send className="ml-2 h-4 w-4" />
+          </>
+        )}
+      </Button>
+    </form>
+  );
+};
+
+export default function Contact() {
   return (
     <section style={{ maxWidth: 1100, margin: '0 auto', padding: '2.5rem 1rem' }}>
       <h1 style={{ fontSize: '2.25rem', fontWeight: 700, marginBottom: '1rem', textAlign: 'center' }}>Get In Touch</h1>
@@ -64,69 +162,12 @@ export default function Contact() {
         {/* Contact Form */}
         <div style={{ flex: '2 1 500px', minWidth: 340 }}>
           <h2 style={{ marginBottom: '2rem' }}>Send a Message</h2>
-          <form
-            onSubmit={handleSubmit}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '1.5rem',
-              width: '100%',
-              minWidth: 0,
-            }}
-          >
-            <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
-            <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
-            <div style={{ gridColumn: '1 / 3' }}>
-              <InputField label="Subject" name="subject" value={formData.subject} onChange={handleChange} required />
-            </div>
-            <div style={{ gridColumn: '1 / 3' }}>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  border: '1px solid var(--border)',
-                  borderRadius: '0.5rem',
-                  fontSize: '1rem',
-                  fontFamily: 'inherit',
-                  resize: 'vertical',
-                  background: 'var(--surface, #fff)',
-                  color: 'var(--text)',
-                  transition: 'background-color 0.2s, color 0.2s',
-                }}
-              />
-            </div>
-            <div style={{ gridColumn: '1 / 3', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                disabled={status === 'sending'}
-                style={{ alignSelf: 'flex-start' }}
-              >
-                {status === 'sending' ? (
-                  'Sending...'
-                ) : (
-                  <>
-                    Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
-                  </>
-                )}
-              </button>
-              {status === 'sent' && (
-                <p style={{ color: '#10b981', fontWeight: 500, margin: 0 }}>
-                  ✓ Message sent successfully! I'll get back to you soon.
-                </p>
-              )}
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>
   );
+}
 }
 
 function ContactInfo({ Icon, title, content, href }: {
