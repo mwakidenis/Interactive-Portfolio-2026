@@ -56,13 +56,11 @@ export default function Contact() {
         {/* Contact Form */}
         <div style={{ flex: 2, minWidth: 300 }}>
           <h2 style={{ marginBottom: '2rem' }}>Send a Message</h2>
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
-              <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <InputField label="Subject" name="subject" value={formData.subject} onChange={handleChange} required />
-            <div>
+          <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
+            <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
+            <InputField label="Subject" name="subject" value={formData.subject} onChange={handleChange} required style={{ gridColumn: '1 / 3' }} />
+            <div style={{ gridColumn: '1 / 3' }}>
               <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Message</label>
               <textarea
                 name="message"
@@ -84,25 +82,27 @@ export default function Contact() {
                 }}
               />
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={status === 'sending'}
-              style={{ alignSelf: 'flex-start' }}
-            >
-              {status === 'sending' ? (
-                'Sending...'
-              ) : (
-                <>
-                  Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
-                </>
+            <div style={{ gridColumn: '1 / 3', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={status === 'sending'}
+                style={{ alignSelf: 'flex-start' }}
+              >
+                {status === 'sending' ? (
+                  'Sending...'
+                ) : (
+                  <>
+                    Send Message <Send size={18} style={{ marginLeft: '0.5rem' }} />
+                  </>
+                )}
+              </button>
+              {status === 'sent' && (
+                <p style={{ color: '#10b981', fontWeight: 500, margin: 0 }}>
+                  ✓ Message sent successfully! I'll get back to you soon.
+                </p>
               )}
-            </button>
-            {status === 'sent' && (
-              <p style={{ color: '#10b981', fontWeight: 500 }}>
-                ✓ Message sent successfully! I'll get back to you soon.
-              </p>
-            )}
+            </div>
           </form>
         </div>
       </div>
