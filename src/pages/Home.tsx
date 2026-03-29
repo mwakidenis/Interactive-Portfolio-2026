@@ -63,33 +63,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section (ONLY THIS PART IMPROVED) */}
+      {/* Features Section (UPDATED & EXPANDED) */}
       <section>
         <div className="container">
           <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>
             What I Do
           </h2>
 
-          {/* FIXED 3 COLUMN GRID */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '2rem',
-          }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '2rem',
+            }}
+          >
             <FeatureCard
               Icon={Code2}
               title="Web Development"
-              description="Building responsive, performant web applications with modern frameworks like React and Next.js."
+              description="Building responsive, performant web applications with modern frameworks like React, Next.js, and Node.js. Focused on clean UI and scalable architecture."
             />
+
             <FeatureCard
               Icon={Zap}
               title="Performance Optimization"
-              description="Optimizing applications for speed and efficiency to deliver the best user experience."
+              description="Improving load speed, rendering efficiency, and backend performance through profiling, caching strategies, and optimized algorithms."
             />
+
             <FeatureCard
               Icon={Shield}
               title="Quality Assurance"
-              description="Writing tests and following best practices to ensure reliable, maintainable code."
+              description="Ensuring reliable systems through testing, debugging, and clean coding practices. I prioritize maintainability and scalability."
+            />
+
+            <FeatureCard
+              Icon={Code2}
+              title="Backend Development"
+              description="Designing secure and scalable APIs using Node.js, Express, and database systems like MongoDB and MySQL."
+            />
+
+            <FeatureCard
+              Icon={Zap}
+              title="Blockchain Research"
+              description="Exploring on-chain and off-chain systems, smart contract integration, and decentralized application architecture."
+            />
+
+            <FeatureCard
+              Icon={Shield}
+              title="Cybersecurity Awareness"
+              description="Applying ethical hacking principles, vulnerability analysis, and system hardening techniques to improve security."
+            />
+
+            <FeatureCard
+              Icon={Code2}
+              title="API Integration"
+              description="Integrating third-party services like payment gateways (M-Pesa, Stripe), authentication systems, and cloud APIs."
+            />
+
+            <FeatureCard
+              Icon={Zap}
+              title="UI/UX Focus"
+              description="Designing clean and user-friendly interfaces with attention to accessibility, responsiveness, and smooth user experience."
+            />
+
+            <FeatureCard
+              Icon={Shield}
+              title="System Design"
+              description="Architecting scalable software systems using microservices, modular design, and efficient data structures like hashing & dictionaries."
             />
           </div>
         </div>
@@ -117,20 +156,25 @@ export default function Home() {
 }
 
 /* KEEPED EXACTLY SAME (NO BREAKING YOUR UI) */
-function FeatureCard({ Icon, title, description }: {
+function FeatureCard({
+  Icon,
+  title,
+  description,
+}: {
   Icon: LucideIcon
   title: string
   description: string
 }) {
   return (
-    <div style={{
-      padding: '2rem',
-      borderRadius: '1rem',
-      border: '1px solid var(--border)',
-      backgroundColor: 'white',
-      transition: 'transform 0.2s, box-shadow 0.2s',
-      cursor: 'pointer',
-    }}
+    <div
+      style={{
+        padding: '2rem',
+        borderRadius: '1rem',
+        border: '1px solid var(--border)',
+        backgroundColor: 'white',
+        transition: 'transform 0.2s, box-shadow 0.2s',
+        cursor: 'pointer',
+      }}
       onMouseOver={(e) => {
         (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px)'
         ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)'
@@ -140,16 +184,18 @@ function FeatureCard({ Icon, title, description }: {
         ;(e.currentTarget as HTMLDivElement).style.boxShadow = 'none'
       }}
     >
-      <div style={{
-        width: '3rem',
-        height: '3rem',
-        borderRadius: '0.75rem',
-        backgroundColor: 'var(--surface)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: '1rem',
-      }}>
+      <div
+        style={{
+          width: '3rem',
+          height: '3rem',
+          borderRadius: '0.75rem',
+          backgroundColor: 'var(--surface)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: '1rem',
+        }}
+      >
         <Icon size={24} color="var(--primary)" />
       </div>
 
