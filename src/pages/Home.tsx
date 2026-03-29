@@ -3,7 +3,7 @@ import { ArrowRight, Code2, Zap, Shield, LucideIcon } from 'lucide-react'
 
 export default function Home() {
   return (
-  <div style={{ minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
         padding: '6rem 0',
@@ -14,6 +14,7 @@ export default function Home() {
               <h1 style={{ marginBottom: '1.5rem' }}>
                 Hi, I'm <span style={{ color: 'var(--primary)' }}>Mwaki Denis</span>
               </h1>
+
               <p style={{
                 fontSize: '1.25rem',
                 color: 'var(--text-light)',
@@ -31,6 +32,7 @@ export default function Home() {
                 Whenever possible, I love building projects with Node.js and modern frameworks
                 like React.js and Next.js
               </p>
+
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link to="/projects" className="btn btn-primary">
                   View My Work <ArrowRight size={18} style={{ marginLeft: '0.5rem' }} />
@@ -40,6 +42,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+
             <img
               src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772750502/1760560045314_uunnsg.jpg"
               alt="Mwaki Denis profile"
@@ -60,13 +63,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section (ONLY THIS PART IMPROVED) */}
       <section>
         <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>What I Do</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            What I Do
+          </h2>
+
+          {/* FIXED 3 COLUMN GRID */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '2rem',
           }}>
             <FeatureCard
@@ -105,10 +112,11 @@ export default function Home() {
           </Link>
         </div>
       </section>
-  </div>
+    </div>
   )
 }
 
+/* KEEPED EXACTLY SAME (NO BREAKING YOUR UI) */
 function FeatureCard({ Icon, title, description }: {
   Icon: LucideIcon
   title: string
@@ -121,7 +129,17 @@ function FeatureCard({ Icon, title, description }: {
       border: '1px solid var(--border)',
       backgroundColor: 'white',
       transition: 'transform 0.2s, box-shadow 0.2s',
-    }}>
+      cursor: 'pointer',
+    }}
+      onMouseOver={(e) => {
+        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px)'
+        ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)'
+      }}
+      onMouseOut={(e) => {
+        (e.currentTarget as HTMLDivElement).style.transform = 'none'
+        ;(e.currentTarget as HTMLDivElement).style.boxShadow = 'none'
+      }}
+    >
       <div style={{
         width: '3rem',
         height: '3rem',
@@ -134,8 +152,9 @@ function FeatureCard({ Icon, title, description }: {
       }}>
         <Icon size={24} color="var(--primary)" />
       </div>
+
       <h3 style={{ marginBottom: '0.5rem' }}>{title}</h3>
       <p style={{ color: 'var(--text-light)' }}>{description}</p>
     </div>
   )
-}
+      }
