@@ -1,0 +1,69 @@
+export interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  github?: string;
+  demo?: string;
+  image?: string;
+}
+
+export const projects: Project[] = [
+  {
+    title: 'Mpesa-Based Wi-Fi Hotspot Billing System',
+    description: `A comprehensive WiFi billing system with M-Pesa integration, loan management, and MikroTik hotspot control.`,
+    technologies: [
+      'React', 'Node.js', 'Next.js', 'JavaScript', 'MySQL', 'MikroTik', 'mpesa', 'prisma', 'TypeScript'
+    ],
+    github: 'https://github.com/mwakidenis/Mpesa-Based_Wi-Fi-Hotspot_Billing_System',
+    demo: 'https://anotherone-production-dcdb.up.railway.app',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774303182/Screenshot_2026-01-09_213840_1_w2846r.png',
+  },
+  {
+    title: 'KibandaPOS (Point Of Sale)',
+    description: `KibandaPOS is a premium utility for mess managers and small-scale food vendors. Track daily expenses, manage members, and settle debts instantly.`,
+    technologies: [
+      'React.js', 'Vite', 'Ant Design', 'Ant Design Charts', 'SheetJS', 'Day.js', 'JavaScript', 'CSS'
+    ],
+    github: 'https://github.com/mwakidenis/Kibanda-POS',
+    demo: 'https://kibandapoa.vercel.app',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774304443/Screenshot_2026-03-24_012021_valxzu.png',
+  },
+  {
+    title: 'TendaN301-Billing-System',
+    description: `A lightweight system that turns a Tenda router into a mini-ISP controller by reverse-engineering its internal API. Centralized control, device billing, and real-time access management for micro-ISP setups.`,
+    technologies: [
+      'PHP', 'JavaScript', 'HTML', 'SQLite', 'Hack'
+    ],
+    github: 'https://github.com/mwakidenis/TendaN301-Billing-System',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774304866/Screenshot_31_tcbkm7.png',
+  },
+  {
+    title: 'MikroTik Hotspot Billing System',
+    description: `A comprehensive WiFi billing system for Kenya with M-Pesa integration, MikroTik router control, and a modern web-based admin dashboard. Real-time analytics, plan management, and secure payments.`,
+    technologies: [
+      'TypeScript', 'JavaScript', 'React', 'Node.js', 'PostgreSQL', 'MikroTik', 'mpesa'
+    ],
+    github: 'https://github.com/mwakidenis/miktrotik-hotspot-billing',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774306274/images_u7uzns.jpg',
+  },
+  {
+    title: 'Gmart Supermarket (E-Commerce)',
+    description: `Gmart is a full-featured online shopping platform with product listings, cart, order management, authentication, and admin dashboard. Built for a seamless, real-world e-commerce experience.`,
+    technologies: [
+      'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'CSS'
+    ],
+    github: 'https://github.com/mwakidenis/gmart-supermarket',
+    demo: 'https://gmart-mu.vercel.app',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772482572/Screenshot_2026-03-02_230417_sd4zwd.png',
+  },
+  {
+    title: 'Developer Portfolio Website',
+    description: `A modern, sleek, and fully responsive personal portfolio built with Vite, React, and TypeScript. Showcases projects, skills, blog, and more with beautiful UI/UX and dark/light mode.`,
+    technologies: [
+      'Vite', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'CSS'
+    ],
+    github: 'https://github.com/mwakidenis/portfolio_website',
+    demo: 'https://mwakidenis.pages.dev',
+    image: 'https://res.cloudinary.com/dqv8dlj2s/image/upload/v1774308274/Screenshot_2026-03-24_022121_pmnzmy.png',
+  },
+];
