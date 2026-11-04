@@ -70,7 +70,7 @@ export default function About() {
             <AnimateItem variant="fade" delay={0.2}>
               <div className="relative h-[400px] w-full flex items-center justify-center">
                 <div className="relative w-full max-w-xs">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-2xl blur opacity-30 animate-pulse" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary via-[#a855f7] to-[#ec4899] rounded-2xl blur opacity-30 animate-pulse" />
                   <div className="relative rounded-2xl border border-border bg-surface p-8 shadow-lg">
                     <Laptop className="w-16 h-16 text-primary mb-6" />
                     <h3 className="text-xl font-bold text-text mb-3">Full-Stack Developer</h3>
@@ -123,13 +123,13 @@ export default function About() {
                     <span className="w-2 h-2 rounded-full bg-primary" />
                     <span>Frontend</span>
                   </div>
-                  <div className="flex items-center gap-2 text-text-secondary">
-                    <span className="w-2 h-2 rounded-full bg-purple-500" />
-                    <span>Backend</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-text-secondary">
-                    <span className="w-2 h-2 rounded-full bg-blue-500" />
-                    <span>Databases</span>
+                    <div className="flex items-center gap-2 text-text-secondary">
+                      <span className="w-2 h-2 rounded-full bg-[#a855f7]" />
+                      <span>Backend</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-text-secondary">
+                      <span className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Databases</span>
                   </div>
                   <div className="flex items-center gap-2 text-text-secondary">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />

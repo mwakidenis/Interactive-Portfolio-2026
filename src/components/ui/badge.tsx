@@ -13,7 +13,7 @@ const variants = {
   outline:
     "border border-border text-text-secondary hover:bg-surface-hover",
   primary:
-    "bg-primary text-primary-text",
+    "bg-primary text-white",
 };
 
 export const Badge: React.FC<BadgeProps> = ({

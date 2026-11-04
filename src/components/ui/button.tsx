@@ -11,9 +11,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variants = {
   primary:
-    "bg-primary text-primary-text hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 disabled:opacity-60 disabled:pointer-events-none",
+    "bg-primary text-white hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 disabled:opacity-60 disabled:pointer-events-none",
   secondary:
-    "bg-secondary text-text-inverse hover:bg-secondary-hover focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 disabled:opacity-60 disabled:pointer-events-none",
+    "bg-secondary text-text-secondary hover:bg-secondary-hover focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 disabled:opacity-60 disabled:pointer-events-none",
   outline:
     "border border-border hover:bg-surface hover:text-text focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 disabled:opacity-60 disabled:pointer-events-none",
   ghost:

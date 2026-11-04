@@ -286,9 +286,9 @@ export default function Contact() {
                 </Card>
 
                 {status === 'idle' && (
-                  <div className="rounded-lg bg-blue-50/50 dark:bg-blue-900/20 border border-blue-200/50 dark:border-blue-900/50 p-4">
+                  <div className="rounded-lg bg-surface border border-border p-4">
                     <div className="flex items-start gap-3">
-                      <Info size={20} className="text-blue-600 dark:text-blue-400 mt-0.5" />
+                      <Info size={20} className="text-primary mt-0.5" />
                       <div>
                         <p className="font-medium text-text">Prefer email directly?</p>
                         <p className="text-sm text-text-muted">

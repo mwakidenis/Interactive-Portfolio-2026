@@ -129,7 +129,7 @@ export function Navbar() {
                     onClick={closeMobile}
                     className={`block py-3 px-4 rounded-lg font-medium transition-colors ${
                       isActive(link.path)
-                        ? 'bg-primary text-primary-text'
+                        ? 'bg-primary text-white'
                         : 'text-text-muted hover:text-primary hover:bg-surface-hover'
                     }`}
                   >

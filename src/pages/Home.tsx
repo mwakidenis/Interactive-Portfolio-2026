@@ -91,9 +91,9 @@ export default function Home() {
             ease: 'easeInOut',
             delay: 2,
           }}
-          className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-600/20 blur-[120px] dark:bg-purple-600/10"
+          className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-primary/20 blur-[120px] dark:bg-primary/10"
         />
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-[80px] dark:bg-blue-500/5" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-primary/10 blur-[80px] dark:bg-primary/5" />
       </div>
 
       {/* Hero Section */}
@@ -121,7 +121,7 @@ export default function Home() {
                 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight text-text"
               >
                 Hi, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#a855f7] to-[#ec4899]">
                   Mwaki Denis
                 </span>
               </motion.h1>
@@ -179,7 +179,7 @@ export default function Home() {
               className="relative hidden lg:block"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-pink-500/20 rounded-2xl blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-[#a855f7]/10 to-[#ec4899]/20 rounded-2xl blur-xl" />
                 <img
                   src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772750502/1760560045314_uunnsg.jpg"
                   alt="Mwaki Denis profile"
